@@ -2,7 +2,7 @@
 import {Form, Link, NavLink, Outlet} from 'react-router-dom'
 import './App.css';
 import { useState } from 'react';
-import {BASE_DB_URL,SIGN_IN_URL, SIGN_UP_URL} from ""
+import {BASE_DB_URL,SIGN_IN_URL, SIGN_UP_URL} from "./firebaseConfig"
 import { createPortal } from 'react-dom';
 import Modal from './routes/utilisateurs/components/shared/modal';
 
