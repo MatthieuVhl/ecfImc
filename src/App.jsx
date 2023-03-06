@@ -16,15 +16,16 @@ function App() {
 
   const signFormSubmitHandler = async (credentials) => {
     try {
-      const URL = signFormMode === "Sign In" ? SIGN_IN_URL : SIGN_UP_URL;
-
-      const response = await fetch(URL, {
+      const URL = signFormMode === "Sign In" ? SIGN_IN_URL : SIGN_UP_URL
+console.log(URL)
+      const response = await fetch (URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(credentials),
-      });
+        body: JSON.stringify(credentials)
+      })
+      console.log(response)
 
       if (!response.ok) {
         throw new Error(
@@ -60,7 +61,7 @@ function App() {
       const data = await response.json();
 
       const tmpArray = [];
-      
+
       for (const key in data) {
         tmpArray.push({ id: key, ...data[key] });
       }
