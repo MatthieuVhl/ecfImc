@@ -1,6 +1,4 @@
 
-import signForm from "./routes/utilisateurs/components/auth/signForm";
-import "./App.css";
 import { useEffect, useState } from "react";
 import { BASE_DB_URL, SIGN_IN_URL, SIGN_UP_URL } from "./firebaseConfig";
 import { createPortal } from "react-dom";
@@ -62,6 +60,7 @@ function App() {
       const data = await response.json();
 
       const tmpArray = [];
+      
       for (const key in data) {
         tmpArray.push({ id: key, ...data[key] });
       }
@@ -73,7 +72,7 @@ function App() {
   };
 
   const setSelectedUtilisateurAndMode = ({ Utilisateur, mode }) => {
-    setUtilisateur(Utilisateur);
+    setSelectedUtilisateur(Utilisateur);
     setUtilisateurFormMode(mode);
   };
 
