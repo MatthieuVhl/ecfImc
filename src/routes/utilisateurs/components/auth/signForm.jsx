@@ -2,12 +2,11 @@ import { useRef } from "react"
 
 
 
-const signForm = (props) => {
+const SignForm = (props) => {
     const mode = props.mode
 
     const emailRef = useRef()
     const passwordRef = useRef()
-
     const submitFormHandler =(event)=>{
         event.preventDefault()
 
@@ -42,4 +41,4 @@ const signForm = (props) => {
         </form>
     )
 }
-export default signForm
+export default SignForm

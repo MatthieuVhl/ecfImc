@@ -15,11 +15,11 @@ const UtilisateurDisplay = (props) => {
           </div>
           <hr />
           <ul>
-            <li><b>Email: </b> {utilisateur.email}</li>
-            <li><b>Email: </b> {utilisateur.firstname}</li>
-            <li><b>Email: </b> {utilisateur.lastname}</li>
-            <li><b>Email: </b> {utilisateur.poids}</li>
-            <li><b>Email: </b> {utilisateur.taille}</li>
+            <li><b>Email : </b> {utilisateur.email}</li>
+            <li><b>Prénom : </b> {utilisateur.firstname}</li>
+            <li><b>Nom : </b> {utilisateur.lastname}</li>
+            <li><b>Poids : </b> {utilisateur.poids}</li>
+            <li><b>Taille : </b> {utilisateur.taille}</li>
            
           </ul>
           <hr />

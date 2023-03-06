@@ -1,12 +1,13 @@
 
 import signForm from "./routes/utilisateurs/components/auth/signForm";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BASE_DB_URL, SIGN_IN_URL, SIGN_UP_URL } from "./firebaseConfig";
 import { createPortal } from "react-dom";
 import Modal from "./routes/utilisateurs/components/shared/modal";
 import UtilisateurForm from "./routes/utilisateurs/components/UtilisateurForm";
 import UtilisateurDisplay from "./routes/utilisateurs/components/UtilisateurDisplay";
+import SignForm from "./routes/utilisateurs/components/auth/signForm";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -55,7 +56,7 @@ function App() {
       const response = await fetch(`${BASE_DB_URL}utilisateur.json`);
       if (!response.ok) {
         throw new Error(
-          "un souci a eu lieu lors de la récupération des utilisateurs."
+          "un soucis a eu lieu lors de la récupération des utilisateurs."
         );
       }
       const data = await response.json();
@@ -172,25 +173,25 @@ function App() {
         }
       }
     }
-  };
-
-  useEffect(() => {
-    refreshUtilisateur();
-  }, []);
+  }
+useEffect(()=>{
+  refreshUtilisateur();
+}, [])
+  
 
   return (
     <div className="App">
       {signFormMode === "Sign In" &&
         createPortal(
           <Modal onClose={() => setSignFormMode("")} modalTitle={"Sign In"}>
-            <signForm mode="Sign In" onSubmit={signFormSubmitHandler} />
+            <SignForm mode="Sign In" onSubmit={signFormSubmitHandler} />
           </Modal>,
           document.getElementById("modal-root")
         )}
       {signFormMode === "Sign Up" &&
         createPortal(
           <Modal onClose={() => setSignFormMode("")} modalTitle={"Sign Up"}>
-            <signForm mode="Sign Up" onSubmit={signFormSubmitHandler} />
+            <SignForm mode="Sign Up" onSubmit={signFormSubmitHandler} />
           </Modal>,
           document.getElementById("modal-root")
         )}

@@ -1,4 +1,4 @@
-
+import classes from './modal.module.css'
 
 const Modal = (props) =>{
 

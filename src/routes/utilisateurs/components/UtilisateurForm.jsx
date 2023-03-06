@@ -1,14 +1,14 @@
 import { useRef } from "react";
 
-const UtilisateurForm = () => {
-  const mode = props.mode;
+const UtilisateurForm = (props) => {
+  const mode = props.mode
   const utilisateur = props.utilisateur;
 
   const firstnameRef = useRef();
   const lastnameRef = useRef();
   const poidsRef = useRef();
   const tailleRef = useRef();
-  const imcRef = useRef();
+
 
   const submitFormHandler = (event) => {
     event.preventDefault();
